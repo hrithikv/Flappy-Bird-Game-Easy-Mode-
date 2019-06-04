@@ -11,7 +11,7 @@ public class MyThread extends Thread {
         private GameUI UI;
       	private boolean isTrue = true;
 	private MyListener listener;
-	private int speed;
+	private int rate;
 	private int x1 = 5, y1 = 5;  //ball movement speed
 	private long start, end;
 	private long last_time;
@@ -23,12 +23,12 @@ public class MyThread extends Thread {
       	private java.awt.Color color = java.awt.Color.orange;
 
 	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI UI, int x,
-	                  		int y, int speed) {
+	                  		int y, int rate) {
 	              this.g = g;
 	            	this.UI = UI;
 	            	this.x = x;
             		this.y = y;
-            		this.speed = speed;
+            		this.rate = rate;
             		this.listener = listener;
 	      }
 
@@ -72,7 +72,7 @@ public class MyThread extends Thread {
 				                	        stopThread();
 				                  }
 				                  try {
-				                        	Thread.sleep(speed);
+				                        	Thread.sleep(rate);
 					                        value -= 0.1;
 				                  } catch (Exception ef) {
 					                        ef.printStackTrace();
