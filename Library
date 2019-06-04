@@ -7,7 +7,7 @@ public class GameUI extends javax.swing.JFrame {
 	private java.awt.Graphics g;
 	private MyListener listener;
 	public javax.swing.JLabel text_field;
-	public javax.swing.JProgressBar pBar;
+	public javax.swing.JProgressBar value_bar;
 	private String test_content;
 	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
       	private javax.swing.JToggleButton toggle_button;
@@ -29,7 +29,7 @@ public class GameUI extends javax.swing.JFrame {
              		lable.setForeground(java.awt.Color.red);
             		text_field.setForeground(java.awt.Color.red);
 
-            		pBar = new javax.swing.JProgressBar(0, 330);
+            		value_bar = new javax.swing.JProgressBar(0, 330);
 		
             		toggle_button = new javax.swing.JToggleButton();
             		toggle_button.setMargin(new Insets(0, 0, 0, 0));
@@ -66,7 +66,7 @@ public class GameUI extends javax.swing.JFrame {
 
 	      	  this.add(toggle_button);
         		this.add(lable);
-        		this.add(pBar);
+        		this.add(value_bar);
         		this.add(text_field);
             javax.swing.JMenuBar bar = creatMenuBar();
 		
