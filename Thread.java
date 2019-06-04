@@ -115,14 +115,14 @@ public class MyThread extends Thread {
 
              		}
 	            	Object[] options = { "Yes", "No" };
-	             	String command = UI.getCommand();
+	             	String test_command = UI.getCommand();
 	            	response = JOptionPane.showOptionDialog(null,
 			                         	"You lost><\nWanna try again?", null, JOptionPane.YES_OPTION,
 			                        	JOptionPane.NO_OPTION, null, options, null);
 
              		//System.out.println(response);
 	             	if (response == 0) {
-	                  		if (command.equals("Easy") || command.equals("Start")) {
+	                  		if (test_command.equals("Easy") || test_command.equals("Start")) {
 			                        	AgainThread();
 		                        		if (test_list.size() != 0) {
 				                              	test_list.removeAll(test_list);
@@ -130,7 +130,7 @@ public class MyThread extends Thread {
 		                         		}
 
                 }
-		          	if (command.equals("Medium")) {
+		          	if (test_command.equals("Medium")) {
 		                 		AgainThread();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
@@ -138,7 +138,7 @@ public class MyThread extends Thread {
 				                }
 			          }
   
-	          		if (command.equals("Hard")) {
+	          		if (test_command.equals("Hard")) {
 				                AgainThread();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
