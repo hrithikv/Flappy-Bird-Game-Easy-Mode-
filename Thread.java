@@ -124,7 +124,7 @@ public class MyThread extends Thread {
 			                        	Again();
 		                        		if (test_list.size() != 0) {
 				                              	test_list.removeAll(test_list);
-			                              		game_UI.creatBall(10, 1);
+			                              		game_UI.newAttempt(10, 1);
 		                         		}
 
                 }
@@ -132,7 +132,7 @@ public class MyThread extends Thread {
 		                 		Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
-					                      game_UI.creatBall(10, 2);
+					                      game_UI.newAttempt(10, 2);
 				                }
 			          }
   
@@ -140,7 +140,7 @@ public class MyThread extends Thread {
 				                Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
-                                game_UI.creatBall(10, 3);
+                                game_UI.newAttempt(10, 3);
 		                		}
 		          	}
 		    }
