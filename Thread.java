@@ -15,11 +15,11 @@ public class MyThread extends Thread {
 	      private long start, end;
 	      private long last_time;
 	      private int response;
-      	private boolean isFinish = true;
+      	private boolean isDone = true;
       	private boolean isPause = true;
       	private java.util.ArrayList<MyThread> list;
-      	private float value = 320;
-      	private java.awt.Color color = java.awt.Color.blue;
+      	private float value = 100;
+      	private java.awt.Color color = java.awt.Color.orange;
 
 	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI UI, int x,
 	                  		int y, int speed) {
@@ -39,7 +39,7 @@ public class MyThread extends Thread {
 		
 		
 		    start = System.currentTimeMillis();
-		    while (isFinish) {
+		    while (isDone) {
 			           while (isPause) {
 				                  synchronized(this.g){
 			                  	g.setColor(java.awt.Color.DARK_GRAY);
@@ -153,13 +153,13 @@ public class MyThread extends Thread {
 	      }
 
       	public void stopThread() {
-             		isFinish = false;
-		            isPause = false;
+             		  isDone = false;
+		          isPause = false;
 
       	}
 
       	public void PauseThread() {
-		            isPause = false;
+		          isPause = false;
 
 	      }
 
@@ -167,9 +167,9 @@ public class MyThread extends Thread {
    		          isPause = true;
       	}
 
-	      public void AgainThread() {
-		            isFinish = true;
-	            	isPause = true;
+	public void AgainThread() {
+		          isDone = true;
+	            	  isPause = true;
       	}
 
       	public void getColor() {
