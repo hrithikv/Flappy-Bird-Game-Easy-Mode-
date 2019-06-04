@@ -6,15 +6,17 @@ import javax.swing.JOptionPane;
 public class MyThread extends Thread {
 	private int width_val = 10;
 	private int height_val = 10;
-	private int x, y;
+	private int x;
+	private int y;
 	private  java.awt.Graphics g;
-        private GameUI UI;
+        private GameUI game_UI;
       	private boolean isTrue = true;
 	private MyListener listener;
 	private int rate;
 	private int x1 = 5; 
 	private int y1 = 5; 
-	private long start, end;
+	private long start;
+	private long end;
 	private long last_time;
 	private int response;
       	private boolean isDone = true;
@@ -23,9 +25,9 @@ public class MyThread extends Thread {
       	private float value = 100;
       	private java.awt.Color color = java.awt.Color.orange;
 
-	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI UI, int x, int y, int rate) {
+	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI game_UI, int x, int y, int rate) {
 	              this.g = g;
-	            	this.UI = UI;
+	            	this.game_UI = game_UI;
 	            	this.x = x;
             		this.y = y;
             		this.rate = rate;
@@ -80,10 +82,10 @@ public class MyThread extends Thread {
 				
                   				end = System.currentTimeMillis();
                   				last_time = 100 - (end - start) / 1000;
-                  				UI.text_field.setText(last_time + "s");
-	                  			UI.pBar.setValue((int) value);
+                  				game_UI.text_field.setText(last_time + "s");
+	                  			game_UI.pBar.setValue((int) value);
                    				if (last_time == 0) {
-                        					test_list = UI.test_list;
+                        					test_list = game_UI.test_list;
                         					for (int j = 0; j < test_list.size(); j++) {
                             						test_list.get(j).stop();
                             						test_list.get(j).fadeOval();
@@ -106,7 +108,7 @@ public class MyThread extends Thread {
 
 	      public void isAgain() {
 		            isTrue = false;
-		            test_list = UI.test_list;
+		            test_list = game_UI.test_list;
 		            //System.out.println(list.size());
 
 	            	for (int j = 0; j < test_list.size(); j++) {
@@ -115,7 +117,7 @@ public class MyThread extends Thread {
 
              		}
 	            	Object[] options = { "Yes", "No" };
-	             	String test_command = UI.getCommand();
+	             	String test_command = game_UI.getCommand();
 	            	response = JOptionPane.showOptionDialog(null,"You lost the turn><\nPlay again?", null, JOptionPane.YES_OPTION, JOptionPane.NO_OPTION, null, options, null);
 
 	             	if (response == 0) {
@@ -123,7 +125,7 @@ public class MyThread extends Thread {
 			                        	Again();
 		                        		if (test_list.size() != 0) {
 				                              	test_list.removeAll(test_list);
-			                              		UI.creatBall(10, 1);
+			                              		game_UI.creatBall(10, 1);
 		                         		}
 
                 }
@@ -131,7 +133,7 @@ public class MyThread extends Thread {
 		                 		Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
-					                      UI.creatBall(10, 2);
+					                      game_UI.creatBall(10, 2);
 				                }
 			          }
   
@@ -139,7 +141,7 @@ public class MyThread extends Thread {
 				                Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
-                                UI.creatBall(10, 3);
+                                game_UI.creatBall(10, 3);
 		                		}
 		          	}
 		    }
