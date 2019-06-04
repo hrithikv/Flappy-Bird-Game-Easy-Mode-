@@ -11,7 +11,7 @@ public class MyThread extends Thread {
 	private  java.awt.Graphics g;
         private GameUI game_UI;
       	private boolean isTrue = true;
-	private MyListener listener;
+	private MyListener sys_listnr;
 	private int rate;
 	private int x1 = 5; 
 	private int y1 = 5; 
@@ -25,13 +25,13 @@ public class MyThread extends Thread {
       	private float value = 100;
       	private java.awt.Color color = java.awt.Color.orange;
 
-	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI game_UI, int x, int y, int rate) {
+	      public MyThread(java.awt.Graphics g, MyListener sys_listnr, GameUI game_UI, int x, int y, int rate) {
 	              this.g = g;
 	            	this.game_UI = game_UI;
 	            	this.x = x;
             		this.y = y;
             		this.rate = rate;
-            		this.listener = listener;
+            		this.sys_listnr = sys_listnr;
 	      }
 
       	public void run() {
@@ -54,7 +54,7 @@ public class MyThread extends Thread {
 	                  			g.setColor(color);
 	                   			g.fillOval(x, y, width_val, height_val);
 			                  	}
-			                   	int x2 = listener.getX();
+			                   	int x2 = sys_listnr.getX();
 			                  	if (x > 280) {
 		                         			x1 = -5;
                    				}
