@@ -123,7 +123,7 @@ public class MyThread extends Thread {
              		//System.out.println(response);
 	             	if (response == 0) {
 	                  		if (test_command.equals("Easy") || test_command.equals("Start")) {
-			                        	AgainThread();
+			                        	Again();
 		                        		if (test_list.size() != 0) {
 				                              	test_list.removeAll(test_list);
 			                              		UI.creatBall(10, 1);
@@ -131,7 +131,7 @@ public class MyThread extends Thread {
 
                 }
 		          	if (test_command.equals("Medium")) {
-		                 		AgainThread();
+		                 		Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
 					                      UI.creatBall(10, 2);
@@ -139,7 +139,7 @@ public class MyThread extends Thread {
 			          }
   
 	          		if (test_command.equals("Hard")) {
-				                AgainThread();
+				                Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
                                 UI.creatBall(10, 3);
@@ -168,7 +168,7 @@ public class MyThread extends Thread {
    		          isPause = true;
       	}
 
-	public void AgainThread() {
+	public void Again() {
 		          isDone = true;
 	            	  isPause = true;
       	}
