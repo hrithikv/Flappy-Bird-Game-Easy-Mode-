@@ -8,7 +8,7 @@ public class MyThread extends Thread {
 	private int x, y;
 	private  java.awt.Graphics g;
         private GameUI UI;
-      	private boolean isexist = true;
+      	private boolean isTrue = true;
 	private MyListener listener;
 	private int speed;
 	private int x1 = 5, y1 = 5;  //ball movement speed
@@ -65,7 +65,7 @@ public class MyThread extends Thread {
                          					y1 = -5;
                    				}
                   				if (y > 630) {
-                        					if (isexist) {
+                        					if (isTrue) {
                       						isAgain();
 				                        	}
 				                	        stopThread();
@@ -104,7 +104,7 @@ public class MyThread extends Thread {
 	      }
 
 	      public void isAgain() {
-		            isexist = false;
+		            isTrue = false;
 		            list = UI.list;
 		            //System.out.println(list.size());
 
