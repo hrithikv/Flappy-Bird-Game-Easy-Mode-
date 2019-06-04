@@ -47,8 +47,8 @@ public class MyThread extends Thread {
 				                  synchronized(this.g){
 			                  	g.setColor(java.awt.Color.DARK_GRAY);
 			                  	g.fillOval(x, y, width_val, height_val);
-	                  			x += x1;
-	                  			y += y1;
+	                  			x = x + x1;
+	                  			y = y + y1;
 
 	                  			getColor();
 	                  			g.setColor(color);
@@ -56,16 +56,16 @@ public class MyThread extends Thread {
 			                  	}
 			                   	int x2 = sys_listnr.getX();
 			                  	if (x > 280) {
-		                         			x1 = -5;
+		                         			x1 = - 6;
                    				}
                   				if (x < 5) {
-                         					x1 = 5;
+                         					x1 = 6;
                    				}
                   				if (y < 80) {
-                        					y1 = 5;
+                        					y1 = 6;
                   				}
                   				if (y > 615 && x > x2 && x < x2 + 100) {
-                         					y1 = -5;
+                         					y1 = -6;
                    				}
                   				if (y > 730) {
                         					if (isTrue) {
@@ -81,7 +81,9 @@ public class MyThread extends Thread {
 				                  }
 				
                   				end = System.currentTimeMillis();
-                  				last_time = 100 - (end - start) / 1000;
+					   	new_val_found = end - startl;
+                  				last_time_foul = 100 - (new_val_found);
+					   	last_time = last_time_foul/ 1000
                   				game_UI.text_field.setText(last_time + "s");
 	                  			game_UI.pBar.setValue((int) value);
                    				if (last_time == 0) {
