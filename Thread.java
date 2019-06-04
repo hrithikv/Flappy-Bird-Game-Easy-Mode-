@@ -52,19 +52,19 @@ public class MyThread extends Thread {
 	                   			g.fillOval(x, y, width, height);
 			                  	}
 			                   	int x2 = listener.getX();
-			                  	if (x > 580) {
+			                  	if (x > 280) {
 		                         			x1 = -5;
                    				}
-                  				if (x < 10) {
+                  				if (x < 5) {
                          					x1 = 5;
                    				}
-                  				if (y < 90) {
+                  				if (y < 80) {
                         					y1 = 5;
                   				}
-                  				if (y > 595 && x > x2 && x < x2 + 100) {
+                  				if (y > 615 && x > x2 && x < x2 + 100) {
                          					y1 = -5;
                    				}
-                  				if (y > 630) {
+                  				if (y > 730) {
                         					if (isTrue) {
                       						isAgain();
 				                        	}
