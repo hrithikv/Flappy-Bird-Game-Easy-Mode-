@@ -69,7 +69,7 @@ public class MyThread extends Thread {
                         					if (isTrue) {
                       						isAgain();
 				                        	}
-				                	        stopThread();
+				                	        stop();
 				                  }
 				                  try {
 				                        	Thread.sleep(rate);
@@ -85,11 +85,11 @@ public class MyThread extends Thread {
                    				if (last_time == 0) {
                         					test_list = UI.test_list;
                         					for (int j = 0; j < test_list.size(); j++) {
-                            						test_list.get(j).stopThread();
+                            						test_list.get(j).stop();
                             						test_list.get(j).fadeOval();
 
                         					}
-                        					stopThread();
+                        					stop();
                         					showConvo();
                   				}
              			}
@@ -110,7 +110,7 @@ public class MyThread extends Thread {
 		            //System.out.println(list.size());
 
 	            	for (int j = 0; j < test_list.size(); j++) {
-                  		  test_list.get(j).stopThread();
+                  		  test_list.get(j).stop();
 		                  	test_list.get(j).fadeOval();
 
              		}
@@ -153,18 +153,18 @@ public class MyThread extends Thread {
 
 	      }
 
-      	public void stopThread() {
+      	public void stop() {
              		  isDone = false;
 		          isPause = false;
 
       	}
 
-      	public void PauseThread() {
+      	public void Pause() {
 		          isPause = false;
 
 	      }
 
-      	public void ContinueThread() {
+      	public void Continue() {
    		          isPause = true;
       	}
 
