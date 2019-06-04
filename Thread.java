@@ -74,8 +74,8 @@ public class MyThread extends Thread {
 				                  try {
 				                        	Thread.sleep(rate);
 					                        value -= 0.1;
-				                  } catch (Exception ef) {
-					                        ef.printStackTrace();
+				                  } catch (Exception exc) {
+					                        exc.printStackTrace();
 				                  }
 				
                   				end = System.currentTimeMillis();
