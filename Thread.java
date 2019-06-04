@@ -18,7 +18,7 @@ public class MyThread extends Thread {
 	private long start;
 	private long end;
 	private long last_time;
-	private int response;
+	private int sys_response;
       	private boolean isDone = true;
       	private boolean isPause = true;
       	private java.util.ArrayList<MyThread> test_list;
@@ -118,9 +118,9 @@ public class MyThread extends Thread {
              		}
 	            	Object[] options = { "Yes", "No" };
 	             	String test_command = game_UI.getCommand();
-	            	response = JOptionPane.showOptionDialog(null,"You lost the turn><\nPlay again?", null, JOptionPane.YES_OPTION, JOptionPane.NO_OPTION, null, options, null);
+	            	sys_response = JOptionPane.showOptionDialog(null,"You lost the turn><\nPlay again?", null, JOptionPane.YES_OPTION, JOptionPane.NO_OPTION, null, options, null);
 
-	             	if (response == 0) {
+	             	if (sys_response == 0) {
 	                  		if (test_command.equals("Easy") || test_command.equals("Start")) {
 			                        	Again();
 		                        		if (test_list.size() != 0) {
@@ -146,10 +146,10 @@ public class MyThread extends Thread {
 		          	}
 		    }
 
-		            if (response == -1) {
+		            if (sys_response == -1) {
 		           	        test_list.removeAll(test_list);
 		            }
-		      	    if (response == 1){
+		      	    if (sys_response == 1){
 				    test_list.removeAll(test_list);
 			    }
 
