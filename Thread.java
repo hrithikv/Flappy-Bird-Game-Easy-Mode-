@@ -4,7 +4,8 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class MyThread extends Thread {
-	private int width = 10, height = 10;
+	private int width_val = 10;
+	private int height_val = 10;
 	private int x, y;
 	private  java.awt.Graphics g;
         private GameUI UI;
@@ -43,13 +44,13 @@ public class MyThread extends Thread {
 			           while (isPause) {
 				                  synchronized(this.g){
 			                  	g.setColor(java.awt.Color.DARK_GRAY);
-			                  	g.fillOval(x, y, width, height);
+			                  	g.fillOval(x, y, width_val, height_val);
 	                  			x += x1;
 	                  			y += y1;
 
 	                  			getColor();
 	                  			g.setColor(color);
-	                   			g.fillOval(x, y, width, height);
+	                   			g.fillOval(x, y, width_val, height_val);
 			                  	}
 			                   	int x2 = listener.getX();
 			                  	if (x > 280) {
@@ -100,7 +101,7 @@ public class MyThread extends Thread {
 	
       	public void fadeOval() {
              		g.setColor(java.awt.Color.DARK_GRAY);
-		            g.fillOval(x, y, width, height);
+		            g.fillOval(x, y, width_val, height_val);
 	      }
 
 	      public void isAgain() {
