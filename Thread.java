@@ -18,7 +18,7 @@ public class MyThread extends Thread {
 	private int response;
       	private boolean isDone = true;
       	private boolean isPause = true;
-      	private java.util.ArrayList<MyThread> list;
+      	private java.util.ArrayList<MyThread> test_list;
       	private float value = 100;
       	private java.awt.Color color = java.awt.Color.orange;
 
@@ -83,10 +83,10 @@ public class MyThread extends Thread {
                   				UI.text_field.setText(last_time + "s");
 	                  			UI.pBar.setValue((int) value);
                    				if (last_time == 0) {
-                        					list = UI.list;
-                        					for (int j = 0; j < list.size(); j++) {
-                            						list.get(j).stopThread();
-                            						list.get(j).fadeOval();
+                        					test_list = UI.test_list;
+                        					for (int j = 0; j < test_list.size(); j++) {
+                            						test_list.get(j).stopThread();
+                            						test_list.get(j).fadeOval();
 
                         					}
                         					stopThread();
@@ -106,12 +106,12 @@ public class MyThread extends Thread {
 
 	      public void isAgain() {
 		            isTrue = false;
-		            list = UI.list;
+		            test_list = UI.test_list;
 		            //System.out.println(list.size());
 
-	            	for (int j = 0; j < list.size(); j++) {
-                  		  list.get(j).stopThread();
-		                  	list.get(j).fadeOval();
+	            	for (int j = 0; j < test_list.size(); j++) {
+                  		  test_list.get(j).stopThread();
+		                  	test_list.get(j).fadeOval();
 
              		}
 	            	Object[] options = { "Yes", "No" };
@@ -124,31 +124,31 @@ public class MyThread extends Thread {
 	             	if (response == 0) {
 	                  		if (command.equals("Easy") || command.equals("Start")) {
 			                        	AgainThread();
-		                        		if (list.size() != 0) {
-				                              	list.removeAll(list);
+		                        		if (test_list.size() != 0) {
+				                              	test_list.removeAll(test_list);
 			                              		UI.creatBall(10, 1);
 		                         		}
 
                 }
 		          	if (command.equals("Medium")) {
 		                 		AgainThread();
-				                if (list.size() != 0) {
-					                      list.removeAll(list);
+				                if (test_list.size() != 0) {
+					                      test_list.removeAll(test_list);
 					                      UI.creatBall(10, 2);
 				                }
 			          }
   
 	          		if (command.equals("Hard")) {
 				                AgainThread();
-				                if (list.size() != 0) {
-					                      list.removeAll(list);
+				                if (test_list.size() != 0) {
+					                      test_list.removeAll(test_list);
                                 UI.creatBall(10, 3);
 		                		}
 		          	}
 		    }
 
 		            if (response == -1 || response == 1) {
-		           	        list.removeAll(list);
+		           	        test_list.removeAll(test_list);
 		            }
 
 	      }
