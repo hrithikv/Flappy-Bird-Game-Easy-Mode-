@@ -10,7 +10,7 @@ public class GameUI extends javax.swing.JFrame {
 	public javax.swing.JProgressBar pBar;
 	private String command;
 	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
-      	private javax.swing.JToggleButton button;
+      	private javax.swing.JToggleButton toggle_button;
 
 	      public static void main(String args[]) {
 		            sys_UI = new GameUI();
@@ -31,28 +31,28 @@ public class GameUI extends javax.swing.JFrame {
 
             		pBar = new javax.swing.JProgressBar(0, 330);
 		
-            		button = new javax.swing.JToggleButton();
-            		button.setMargin(new Insets(0, 0, 0, 0));
-            		button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
-            		button.setActionCommand("Pause");
+            		toggle_button = new javax.swing.JToggleButton();
+            		toggle_button.setMargin(new Insets(0, 0, 0, 0));
+            		toggle_button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
+            		toggle_button.setActionCommand("Pause");
 		
 		            java.awt.event.ActionListener button_listener = new java.awt.event.ActionListener() {
 
 		                	public void actionPerformed(ActionEvent e) {
 			                       	String com = e.getActionCommand();
                       				if (com.equals("Pause")) {
-				                            	button.setMargin(new Insets(0, 0, 0, 0));
-			                            		button.setIcon(new javax.swing.ImageIcon("images/start.gif"));
-				                            	button.setActionCommand("Continue");
+				                            	toggle_button.setMargin(new Insets(0, 0, 0, 0));
+			                            		toggle_button.setIcon(new javax.swing.ImageIcon("images/start.gif"));
+				                            	toggle_button.setActionCommand("Continue");
 					                            for (int i = 0; i < list.size(); i++) {
 						                                  list.get(i).PauseThread();
                             					}
 
 				                      }
 				                      if (com.equals("Continue")) {
-                            					button.setMargin(new Insets(0, 0, 0, 0));
-                            					button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
-					                            button.setActionCommand("Continue");
+                            					toggle_button.setMargin(new Insets(0, 0, 0, 0));
+                            					toggle_button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
+					                            toggle_button.setActionCommand("Continue");
                             					for (int i = 0; i < list.size(); i++) {
                                   						list.get(i).ContinueThread();
                             					}
@@ -62,9 +62,9 @@ public class GameUI extends javax.swing.JFrame {
                 		 }
 
             };
-		        button.addActionListener(button_listener);
+		        toggle_button.addActionListener(button_listener);
 
-	      	  this.add(button);
+	      	  this.add(toggle_button);
         		this.add(lable);
         		this.add(pBar);
         		this.add(text_field);
