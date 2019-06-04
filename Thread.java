@@ -147,9 +147,12 @@ public class MyThread extends Thread {
 		          	}
 		    }
 
-		            if (response == -1 || response == 1) {
+		            if (response == -1) {
 		           	        test_list.removeAll(test_list);
 		            }
+		      	    if (response == 1){
+				    test_list.removeAll(test_list);
+			    }
 
 	      }
 
