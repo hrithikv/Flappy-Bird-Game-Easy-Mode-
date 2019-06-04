@@ -4,17 +4,17 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class MyThread extends Thread {
-	      private int width = 20, height = 20;
-	      private int x, y;
-	      private  java.awt.Graphics g;
+	private int width = 10, height = 10;
+	private int x, y;
+	private  java.awt.Graphics g;
         private GameUI UI;
       	private boolean isexist = true;
-	      private MyListener listener;
-	      private int speed;
-	      private int x1 = 5, y1 = 5;  //ball movement speed
-	      private long start, end;
-	      private long last_time;
-	      private int response;
+	private MyListener listener;
+	private int speed;
+	private int x1 = 5, y1 = 5;  //ball movement speed
+	private long start, end;
+	private long last_time;
+	private int response;
       	private boolean isDone = true;
       	private boolean isPause = true;
       	private java.util.ArrayList<MyThread> list;
@@ -125,7 +125,7 @@ public class MyThread extends Thread {
 			                        	AgainThread();
 		                        		if (list.size() != 0) {
 				                              	list.removeAll(list);
-			                              		UI.creatBall(20, 1);
+			                              		UI.creatBall(10, 1);
 		                         		}
 
                 }
@@ -133,7 +133,7 @@ public class MyThread extends Thread {
 		                 		AgainThread();
 				                if (list.size() != 0) {
 					                      list.removeAll(list);
-					                      UI.creatBall(20, 2);
+					                      UI.creatBall(10, 2);
 				                }
 			          }
   
@@ -141,7 +141,7 @@ public class MyThread extends Thread {
 				                AgainThread();
 				                if (list.size() != 0) {
 					                      list.removeAll(list);
-                                UI.creatBall(20, 3);
+                                UI.creatBall(10, 3);
 		                		}
 		          	}
 		    }
