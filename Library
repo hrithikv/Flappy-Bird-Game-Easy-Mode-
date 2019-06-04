@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class GameUI extends javax.swing.JFrame {
         private static GameUI sys_UI;
 	private java.awt.Graphics g;
-	private MyListener ml;
+	private MyListener listener;
 	public javax.swing.JLabel text_field;
 	public javax.swing.JProgressBar pBar;
 	private String command;
@@ -152,17 +152,17 @@ public class GameUI extends javax.swing.JFrame {
 	
 	    public void creatBall(int speed, int num) {
 		          java.util.Random ran = new java.util.Random();
-             	if (ml == null) {
+             	if (listener == null) {
 			                g = sys_UI.getGraphics();
-		                	ml = new MyListener(g);
-	                		sys_UI.addMouseListener(ml);
-	                		sys_UI.addMouseMotionListener(ml);
+		                	listener = new MyListener(g);
+	                		sys_UI.addMouseListener(listener);
+	                		sys_UI.addMouseMotionListener(listener);
 
 		          }
 		          for (int i = 0; i < num; i++) {
 			                int x = ran.nextInt(600) + 10;  //Random start position 
 			                int y = ran.nextInt(300) + 100;
-			                MyThread th = new MyThread(g, ml, sys_UI, x, y, speed);
+			                MyThread th = new MyThread(g, listener, sys_UI, x, y, speed);
 			                list.add(th);
 		                	th.start();
           		}
