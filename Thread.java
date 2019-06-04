@@ -47,7 +47,7 @@ public class MyThread extends Thread {
 	                  			x += x1;
 	                  			y += y1;
 
-	                  			getColors();
+	                  			getColor();
 	                  			g.setColor(color);
 	                   			g.fillOval(x, y, width, height);
 			                  	}
@@ -172,11 +172,11 @@ public class MyThread extends Thread {
 	            	isPause = true;
       	}
 
-      	public void getColors() {
-			          color = java.awt.Color.yellow;
+      	public void getColor() {
+			          color = java.awt.Color.black;
 	      }
 
     	  public void showDialog() {
-             		javax.swing.JOptionPane.showInputDialog("Congratulations! You've lasted 100s! \nPlease enter your name.");
+             		javax.swing.JOptionPane.showInputDialog("Please enter the name.\n");
       	}
 }
