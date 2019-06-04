@@ -89,7 +89,7 @@ public class MyThread extends Thread {
 
                         					}
                         					stopThread();
-                        					showDialog();
+                        					showConvo();
                   				}
              			}
 
@@ -171,12 +171,11 @@ public class MyThread extends Thread {
 		          isDone = true;
 	            	  isPause = true;
       	}
+	public void showConvo() {
+             		javax.swing.JOptionPane.showInputDialog("Please enter the name.\n");
+      	}
 
       	public void getColor() {
 			          color = java.awt.Color.black;
 	      }
-
-    	  public void showDialog() {
-             		javax.swing.JOptionPane.showInputDialog("Please enter the name.\n");
-      	}
 }
