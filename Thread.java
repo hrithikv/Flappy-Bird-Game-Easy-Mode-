@@ -12,7 +12,8 @@ public class MyThread extends Thread {
       	private boolean isTrue = true;
 	private MyListener listener;
 	private int rate;
-	private int x1 = 5, y1 = 5;  //ball movement speed
+	private int x1 = 5; 
+	private int y1 = 5; 
 	private long start, end;
 	private long last_time;
 	private int response;
@@ -22,8 +23,7 @@ public class MyThread extends Thread {
       	private float value = 100;
       	private java.awt.Color color = java.awt.Color.orange;
 
-	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI UI, int x,
-	                  		int y, int rate) {
+	      public MyThread(java.awt.Graphics g, MyListener listener, GameUI UI, int x, int y, int rate) {
 	              this.g = g;
 	            	this.UI = UI;
 	            	this.x = x;
@@ -116,11 +116,8 @@ public class MyThread extends Thread {
              		}
 	            	Object[] options = { "Yes", "No" };
 	             	String test_command = UI.getCommand();
-	            	response = JOptionPane.showOptionDialog(null,
-			                         	"You lost><\nWanna try again?", null, JOptionPane.YES_OPTION,
-			                        	JOptionPane.NO_OPTION, null, options, null);
+	            	response = JOptionPane.showOptionDialog(null,"You lost the turn><\nPlay again?", null, JOptionPane.YES_OPTION, JOptionPane.NO_OPTION, null, options, null);
 
-             		//System.out.println(response);
 	             	if (response == 0) {
 	                  		if (test_command.equals("Easy") || test_command.equals("Start")) {
 			                        	Again();
