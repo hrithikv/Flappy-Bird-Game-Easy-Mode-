@@ -3,23 +3,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GameUI extends javax.swing.JFrame {
-        private static GameUI UI;
-	      private java.awt.Graphics g;
-	      private MyListener ml;
-	      public javax.swing.JLabel text_field;
-	      public javax.swing.JProgressBar pBar;
-	      private String command;
-	      public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
+        private static GameUI sys_UI;
+	private java.awt.Graphics g;
+	private MyListener ml;
+	public javax.swing.JLabel text_field;
+	public javax.swing.JProgressBar pBar;
+	private String command;
+	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
       	private javax.swing.JToggleButton button;
 
 	      public static void main(String args[]) {
-		            UI = new GameUI();
-		            UI.initUI();
+		            sys_UI = new GameUI();
+		            sys_UI.initUI();
 	}
 
 	      public void initUI() {
             		this.setTitle("PinBall");
-		            this.setSize(610, 635);
+		        this.setSize(610, 635);
             		this.setDefaultCloseOperation(3);
              		this.setLocationRelativeTo(null);
             		this.setLayout(new java.awt.FlowLayout());
@@ -153,16 +153,16 @@ public class GameUI extends javax.swing.JFrame {
 	    public void creatBall(int speed, int num) {
 		          java.util.Random ran = new java.util.Random();
              	if (ml == null) {
-			                g = UI.getGraphics();
+			                g = sys_UI.getGraphics();
 		                	ml = new MyListener(g);
-	                		UI.addMouseListener(ml);
-	                		UI.addMouseMotionListener(ml);
+	                		sys_UI.addMouseListener(ml);
+	                		sys_UI.addMouseMotionListener(ml);
 
 		          }
 		          for (int i = 0; i < num; i++) {
 			                int x = ran.nextInt(600) + 10;  //Random start position 
 			                int y = ran.nextInt(300) + 100;
-			                MyThread th = new MyThread(g, ml, UI, x, y, speed);
+			                MyThread th = new MyThread(g, ml, sys_UI, x, y, speed);
 			                list.add(th);
 		                	th.start();
           		}
