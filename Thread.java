@@ -101,10 +101,6 @@ public class MyThread extends Thread {
       	}
 
 	
-      	public void fadeOval() {
-             		g.setColor(java.awt.Color.DARK_GRAY);
-		            g.fillOval(x, y, width_val, height_val);
-	      }
 
 	      public void isAgain() {
 		            isTrue = false;
@@ -154,7 +150,12 @@ public class MyThread extends Thread {
 			    }
 
 	      }
+      	public void fadeOval() {
+             		g.setColor(java.awt.Color.DARK_GRAY);
+		            g.fillOval(x, y, width_val, height_val);
+	      }
 
+	
       	public void Pause() {
 		          isPause = false;
 
@@ -176,7 +177,8 @@ public class MyThread extends Thread {
 	            	  isPause = true;
       	}
 	public void showConvo() {
-             		javax.swing.JOptionPane.showInputDialog("Please enter the name.\n");
+		String val_to_do = "Please enter the name"
+             		javax.swing.JOptionPane.showInputDialog(val_to_do);
       	}
 
       	public void getColor() {
