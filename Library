@@ -8,7 +8,7 @@ public class GameUI extends javax.swing.JFrame {
 	private MyListener listener;
 	public javax.swing.JLabel text_field;
 	public javax.swing.JProgressBar pBar;
-	private String command;
+	private String test_content;
 	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
       	private javax.swing.JToggleButton toggle_button;
 
@@ -98,32 +98,32 @@ public class GameUI extends javax.swing.JFrame {
 		
           		ActionListener listener = new java.awt.event.ActionListener() {
 			                public void actionPerformed(ActionEvent e) {
-				                      command = e.getActionCommand();
+				                      test_content = e.getActionCommand();
 				
-				                      if (command.equals("Start") && list.size() == 0) {
+				                      if (test_content.equals("Start") && list.size() == 0) {
 					                            creatBall(20, 1);
                       				}
 				
-		                      		if (command.equals("Quit")) {
+		                      		if (test_content.equals("Quit")) {
 	                            				System.exit(0);
 	                      			}
 			
-	                      			if (command.equals("Easy") && list.size() == 0) {
+	                      			if (test_content.equals("Easy") && list.size() == 0) {
 
 		                            			creatBall(20, 1);
 				                      }
 
 				
-                      				if (command.equals("Medium") && list.size() == 0) {
+                      				if (test_content.equals("Medium") && list.size() == 0) {
                             					creatBall(20, 2);
                       				}
-                      				if (command.equals("Hard") && list.size() == 0) {
+                      				if (test_content.equals("Hard") && list.size() == 0) {
                             					creatBall(20, 3);
                        				}
-                      				if (command.equals("How to play")) {
+                      				if (test_content.equals("How to play")) {
             				                	javax.swing.JOptionPane.showMessageDialog(null,"Try to catch the ball by moving your mouse\nYou can choose the difficulty of the game");
 				                      }
-				                      if (command.equals("About")) {
+				                      if (test_content.equals("About")) {
 				                            	javax.swing.JOptionPane.showMessageDialog(null,"Coded by Ziyue Chen\nJune 2012\nCopy right reserved");
 				                      }
                  			}
@@ -169,7 +169,7 @@ public class GameUI extends javax.swing.JFrame {
 
 	    }
 
-	    public String getCommand() {
-		          return command;
+	    public String returnContent() {
+		          return test_content;
 	    }
 }
