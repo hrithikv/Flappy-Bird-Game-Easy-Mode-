@@ -155,12 +155,6 @@ public class MyThread extends Thread {
 
 	      }
 
-      	public void stop() {
-             		  isDone = false;
-		          isPause = false;
-
-      	}
-
       	public void Pause() {
 		          isPause = false;
 
@@ -169,6 +163,13 @@ public class MyThread extends Thread {
       	public void Continue() {
    		          isPause = true;
       	}
+
+	public void stop() {
+             		  isDone = false;
+		          isPause = false;
+
+      	}
+
 
 	public void Again() {
 		          isDone = true;
