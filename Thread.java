@@ -1,5 +1,3 @@
-package com.ziyue;
-
 import java.awt.Color;  
 import javax.swing.JOptionPane;
 
@@ -17,6 +15,9 @@ public class MyThread extends Thread {
 	private int y1 = 5; 
 	private long start;
 	private long end;
+	private string low = "easy"
+	private string mid = "medium"
+	private string diff = "hard"
 	private long last_time;
 	private int sys_response;
       	private boolean isDone = true;
@@ -119,7 +120,7 @@ public class MyThread extends Thread {
 	            	sys_response = JOptionPane.showOptionDialog(null,"You lost the turn><\nPlay again?", null, JOptionPane.YES_OPTION, JOptionPane.NO_OPTION, null, options, null);
 
 	             	if (sys_response == 0) {
-	                  		if (test_command.equals("Easy") || test_command.equals("Start")) {
+	                  		if (test_command.equals(low) || test_command.equals("Start")) {
 			                        	Again();
 		                        		if (test_list.size() != 0) {
 				                              	test_list.removeAll(test_list);
@@ -127,7 +128,7 @@ public class MyThread extends Thread {
 		                         		}
 
                 }
-		          	if (test_command.equals("Medium")) {
+		          	if (test_command.equals(mid)) {
 		                 		Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
@@ -135,7 +136,7 @@ public class MyThread extends Thread {
 				                }
 			          }
   
-	          		if (test_command.equals("Hard")) {
+	          		if (test_command.equals(diff)) {
 				                Again();
 				                if (test_list.size() != 0) {
 					                      test_list.removeAll(test_list);
