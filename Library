@@ -18,43 +18,44 @@ public class GameUI extends javax.swing.JFrame {
 	}
 
 	      public void initUI() {
-            		this.setTitle("PinBall");
-		        this.setSize(610, 635);
+            		this.setTitle("game");
+		        this.setSize(510, 535);
             		this.setDefaultCloseOperation(3);
              		this.setLocationRelativeTo(null);
             		this.setLayout(new java.awt.FlowLayout());
-            		this.getContentPane().setBackground(java.awt.Color.DARK_GRAY);
+            		this.getContentPane().setBackground(java.awt.Color.BLUE);
             		text_field = new javax.swing.JLabel();
             		javax.swing.JLabel lable = new javax.swing.JLabel("Time");
              		lable.setForeground(java.awt.Color.red);
             		text_field.setForeground(java.awt.Color.red);
-
+			int zero = 0;
             		value_bar = new javax.swing.JProgressBar(0, 330);
 		
             		toggle_button = new javax.swing.JToggleButton();
-            		toggle_button.setMargin(new Insets(0, 0, 0, 0));
-            		toggle_button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
-            		toggle_button.setActionCommand("Pause");
+            		toggle_button.setMargin(new Insets(zero, zero, zero, zero));
+            		toggle_button.setIcon(new javax.swing.ImageIcon("images/Stop.gif"));
+            		toggle_button.setActionCommand("Stop");
 		
 		            java.awt.event.ActionListener button_listener = new java.awt.event.ActionListener() {
 
 		                	public void actionPerformed(ActionEvent e) {
 			                       	String com = e.getActionCommand();
-                      				if (com.equals("Pause")) {
-				                            	toggle_button.setMargin(new Insets(0, 0, 0, 0));
+                      				if (com.equals("Stop")) {
+				                            	toggle_button.setMargin(new Insets(zero, zero, zero, zero));
 			                            		toggle_button.setIcon(new javax.swing.ImageIcon("images/start.gif"));
-				                            	toggle_button.setActionCommand("Continue");
+				                            	toggle_button.setActionCommand("Next");
 					                            for (int i = 0; i < list.size(); i++) {
-						                                  list.get(i).PauseThread();
+						                                  list.get(i).StopThread();
                             					}
 
 				                      }
-				                      if (com.equals("Continue")) {
-                            					toggle_button.setMargin(new Insets(0, 0, 0, 0));
-                            					toggle_button.setIcon(new javax.swing.ImageIcon("images/Pause.gif"));
-					                            toggle_button.setActionCommand("Continue");
-                            					for (int i = 0; i < list.size(); i++) {
-                                  						list.get(i).ContinueThread();
+				                      if (com.equals("Next")) {
+                            					toggle_button.setMargin(new Insets(zero, zero, zero, zero));
+                            					toggle_button.setIcon(new javax.swing.ImageIcon("images/Stop.gif"));
+					                            toggle_button.setActionCommand("Next");
+								int val_to_know = list.size()
+                            					for (int i = 0; i < val_to_know; i++) {
+                                  						list.get(i).NextThread();
                             					}
 
                       				}
@@ -68,33 +69,34 @@ public class GameUI extends javax.swing.JFrame {
         		this.add(lable);
         		this.add(value_bar);
         		this.add(text_field);
-            javax.swing.JMenuBar bar = creatMenuBar();
+            javax.swing.JMenuBar menu_bar = creatMenuBar();
 		
-        		this.setJMenuBar(bar);
+        		this.setJMenuBar(menu_bar);
 		
-        		this.setVisible(true);
+        		this.setVisible(true);                                 
 	    }
 
 	
     	public javax.swing.JMenuBar creatMenuBar() {
-          		javax.swing.JMenuBar bar = new javax.swing.JMenuBar();
-          		javax.swing.JMenu menu_menu = new javax.swing.JMenu("Menu");
-           		javax.swing.JMenu difficulty_menu = new javax.swing.JMenu("Difficulty");
+          		javax.swing.JMenuBar menu_bar = new javax.swing.JMenuBar();
+          		javax.swing.JMenu final_outcome = new javax.swing.JMenu("Menu");
+           		javax.swing.JMenu difficulty_bar = new javax.swing.JMenu("Difficulty");
           		javax.swing.JMenu help_menu = new javax.swing.JMenu("Help");
-          		javax.swing.JMenuItem star_item = new javax.swing.JMenuItem("Start");
-	          	javax.swing.JMenuItem exit_item = new javax.swing.JMenuItem("Quit");
-		          javax.swing.JMenuItem help_item = new javax.swing.JMenuItem("How to play");
+          		javax.swing.JMenuItem starting = new javax.swing.JMenuItem("Start");
+			String exit_tr_str = "quit"
+	          	javax.swing.JMenuItem last_token = new javax.swing.JMenuItem(exit_tr_str);
+		          javax.swing.JMenuItem helper = new javax.swing.JMenuItem("How to play");
 		          javax.swing.JMenuItem about_item = new javax.swing.JMenuItem("About");
-	          	javax.swing.JRadioButtonMenuItem easy_item = new javax.swing.JRadioButtonMenuItem("Eazy");
-	        	  javax.swing.JRadioButtonMenuItem middle_item = new javax.swing.JRadioButtonMenuItem("Medium");
-        		  javax.swing.JRadioButtonMenuItem hard_item = new javax.swing.JRadioButtonMenuItem("Hard");	  
+	          	javax.swing.JRadioButtonMenuItem easiest = new javax.swing.JRadioButtonMenuItem("Eazy");
+	        	  javax.swing.JRadioButtonMenuItem middling_val = new javax.swing.JRadioButtonMenuItem("Medium");
+        		  javax.swing.JRadioButtonMenuItem hardest = new javax.swing.JRadioButtonMenuItem("Hard");	  
           		javax.swing.ButtonGroup group = new javax.swing.ButtonGroup();
-		      		group.add(easy_item);
-          		group.add(middle_item);
-          		group.add(hard_item);
-          		difficulty_menu.add(easy_item);
-          		difficulty_menu.add(middle_item);
-          		difficulty_menu.add(hard_item);
+		      	group.add(easiest);
+          		group.add(middling_val);
+          		group.add(hardest);
+          		difficulty_bar.add(easiest);
+          		difficulty_bar.add(middling_val);
+          		difficulty_bar.add(hardest);
 		
           		ActionListener listener = new java.awt.event.ActionListener() {
 			                public void actionPerformed(ActionEvent e) {
@@ -129,24 +131,24 @@ public class GameUI extends javax.swing.JFrame {
                  			}
 		          };
 		
-		          star_item.addActionListener(listener);
-		          exit_item.addActionListener(listener);
-		          easy_item.addActionListener(listener);
-		          middle_item.addActionListener(listener);
-		          hard_item.addActionListener(listener);
-              help_item.addActionListener(listener);
+		          starting.addActionListener(listener);
+		          last_token.addActionListener(listener);
+		          easiest.addActionListener(listener);
+		          middling_val.addActionListener(listener);
+		          hardest.addActionListener(listener);
+              helper.addActionListener(listener);
 		          about_item.addActionListener(listener);
 
-	          	menu_menu.add(star_item);
-		          menu_menu.add(exit_item);
-		          help_menu.add(help_item);
+	          	final_outcome.add(starting);
+		          final_outcome.add(last_token);
+		          help_menu.add(helper);
 		          help_menu.add(about_item);
 		
-	          	bar.add(menu_menu);
-	          	bar.add(difficulty_menu);
-          		bar.add(help_menu);
+	          	menu_bar.add(final_outcome);
+	          	menu_bar.add(difficulty_bar);
+          		menu_bar.add(help_menu);
 		
-	          	return bar;
+	          	return menu_bar;
 	    }
 
 	
