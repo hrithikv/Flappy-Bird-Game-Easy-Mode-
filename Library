@@ -26,8 +26,8 @@ public class GameUI extends javax.swing.JFrame {
             		this.getContentPane().setBackground(java.awt.Color.BLUE);
             		data_text = new javax.swing.JLabel();
             		javax.swing.JLabel lable = new javax.swing.JLabel("Time");
-             		lable.setForeground(java.awt.Color.red);
-            		data_text.setForeground(java.awt.Color.red);
+             		lable.setForeground(java.awt.Color.brown);
+            		data_text.setForeground(java.awt.Color.brown);
 			int zero = 0;
             		value_bar = new javax.swing.JProgressBar(0, 330);
 		
