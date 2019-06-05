@@ -6,7 +6,7 @@ public class GameUI extends javax.swing.JFrame {
         private static GameUI sys_UI;
 	private java.awt.Graphics g;
 	private MyListener listener;
-	public javax.swing.JLabel text_field;
+	public javax.swing.JLabel data_text;
 	public javax.swing.JProgressBar value_bar;
 	private String test_content;
 	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
@@ -24,10 +24,10 @@ public class GameUI extends javax.swing.JFrame {
              		this.setLocationRelativeTo(null);
             		this.setLayout(new java.awt.FlowLayout());
             		this.getContentPane().setBackground(java.awt.Color.BLUE);
-            		text_field = new javax.swing.JLabel();
+            		data_text = new javax.swing.JLabel();
             		javax.swing.JLabel lable = new javax.swing.JLabel("Time");
              		lable.setForeground(java.awt.Color.red);
-            		text_field.setForeground(java.awt.Color.red);
+            		data_text.setForeground(java.awt.Color.red);
 			int zero = 0;
             		value_bar = new javax.swing.JProgressBar(0, 330);
 		
@@ -68,7 +68,7 @@ public class GameUI extends javax.swing.JFrame {
 	      	  this.add(toggle_button);
         		this.add(lable);
         		this.add(value_bar);
-        		this.add(text_field);
+        		this.add(data_text);
             javax.swing.JMenuBar menu_bar = creatMenuBar();
 		
         		this.setJMenuBar(menu_bar);
