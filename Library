@@ -9,7 +9,7 @@ public class GameUI extends javax.swing.JFrame {
 	public javax.swing.JLabel data_text;
 	public javax.swing.JProgressBar value_bar;
 	private String test_content;
-	public java.util.ArrayList<MyThread> list = new java.util.ArrayList<MyThread>();
+	public java.util.ArrayList<MyThread> data_arrayl = new java.util.ArrayList<MyThread>();
       	private javax.swing.JToggleButton toggle_button;
 
 	      public static void main(String args[]) {
@@ -44,8 +44,8 @@ public class GameUI extends javax.swing.JFrame {
 				                            	toggle_button.setMargin(new Insets(zero, zero, zero, zero));
 			                            		toggle_button.setIcon(new javax.swing.ImageIcon("images/start.gif"));
 				                            	toggle_button.setActionCommand("Next");
-					                            for (int i = 0; i < list.size(); i++) {
-						                                  list.get(i).StopThread();
+					                            for (int i = 0; i < data_arrayl.size(); i++) {
+						                                  data_arrayl.get(i).StopThread();
                             					}
 
 				                      }
@@ -53,9 +53,9 @@ public class GameUI extends javax.swing.JFrame {
                             					toggle_button.setMargin(new Insets(zero, zero, zero, zero));
                             					toggle_button.setIcon(new javax.swing.ImageIcon("images/Stop.gif"));
 					                            toggle_button.setActionCommand("Next");
-								int val_to_know = list.size()
+								int val_to_know = data_arrayl.size()
                             					for (int i = 0; i < val_to_know; i++) {
-                                  						list.get(i).NextThread();
+                                  						data_arrayl.get(i).NextThread();
                             					}
 
                       				}
@@ -102,7 +102,7 @@ public class GameUI extends javax.swing.JFrame {
 			                public void actionPerformed(ActionEvent e) {
 				                      test_content = e.getActionCommand();
 				
-				                      if (test_content.equals("Start") && list.size() == 0) {
+				                      if (test_content.equals("Start") && data_arrayl.size() == 0) {
 					                            creatBall(20, 1);
                       				}
 				
@@ -110,16 +110,16 @@ public class GameUI extends javax.swing.JFrame {
 	                            				System.exit(0);
 	                      			}
 			
-	                      			if (test_content.equals("Easy") && list.size() == 0) {
+	                      			if (test_content.equals("Easy") && data_arrayl.size() == 0) {
 
 		                            			creatBall(20, 1);
 				                      }
 
 				
-                      				if (test_content.equals("Medium") && list.size() == 0) {
+                      				if (test_content.equals("Medium") && data_arrayl.size() == 0) {
                             					creatBall(20, 2);
                       				}
-                      				if (test_content.equals("Hard") && list.size() == 0) {
+                      				if (test_content.equals("Hard") && data_arrayl.size() == 0) {
                             					creatBall(20, 3);
                        				}
                       				if (test_content.equals("How to play")) {
@@ -165,7 +165,7 @@ public class GameUI extends javax.swing.JFrame {
 			                int x = ran.nextInt(600) + 10;  //Random start position 
 			                int y = ran.nextInt(300) + 100;
 			                MyThread th = new MyThread(g, listener, sys_UI, x, y, speed);
-			                list.add(th);
+			                data_arrayl.add(th);
 		                	th.start();
           		}
 
