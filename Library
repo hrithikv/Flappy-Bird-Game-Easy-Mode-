@@ -98,7 +98,7 @@ public class GameUI extends javax.swing.JFrame {
           		difficulty_bar.add(middling_val);
           		difficulty_bar.add(hardest);
 		
-          		ActionListener listener = new java.awt.event.ActionListener() {
+          		ActionListener test_listenr = new java.awt.event.ActionListener() {
 			                public void actionPerformed(ActionEvent e) {
 				                      test_content = e.getActionCommand();
 				
@@ -131,13 +131,13 @@ public class GameUI extends javax.swing.JFrame {
                  			}
 		          };
 		
-		          starting.addActionListener(listener);
-		          last_token.addActionListener(listener);
-		          easiest.addActionListener(listener);
-		          middling_val.addActionListener(listener);
-		          hardest.addActionListener(listener);
-              helper.addActionListener(listener);
-		          about_item.addActionListener(listener);
+		          starting.addActionListener(test_listenr);
+		          last_token.addActionListener(test_listenr);
+		          easiest.addActionListener(test_listenr);
+		          middling_val.addActionListener(test_listenr);
+		          hardest.addActionListener(test_listenr);
+              helper.addActionListener(test_listenr);
+		          about_item.addActionListener(test_listenr);
 
 	          	final_outcome.add(starting);
 		          final_outcome.add(last_token);
