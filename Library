@@ -81,7 +81,7 @@ public class GameUI extends javax.swing.JFrame {
           		javax.swing.JMenuBar menu_bar = new javax.swing.JMenuBar();
           		javax.swing.JMenu final_outcome = new javax.swing.JMenu("Menu");
            		javax.swing.JMenu difficulty_bar = new javax.swing.JMenu("Difficulty");
-          		javax.swing.JMenu help_menu = new javax.swing.JMenu("Help");
+          		javax.swing.JMenu helper_final = new javax.swing.JMenu("Help");
           		javax.swing.JMenuItem starting = new javax.swing.JMenuItem("Start");
 			String exit_tr_str = "quit"
 	          	javax.swing.JMenuItem last_token = new javax.swing.JMenuItem(exit_tr_str);
@@ -141,12 +141,12 @@ public class GameUI extends javax.swing.JFrame {
 
 	          	final_outcome.add(starting);
 		          final_outcome.add(last_token);
-		          help_menu.add(helper);
-		          help_menu.add(about_item);
+		          helper_final.add(helper);
+		          helper_final.add(about_item);
 		
 	          	menu_bar.add(final_outcome);
 	          	menu_bar.add(difficulty_bar);
-          		menu_bar.add(help_menu);
+          		menu_bar.add(helper_final);
 		
 	          	return menu_bar;
 	    }
